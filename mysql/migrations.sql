@@ -124,3 +124,11 @@ ALTER TABLE `taskHistory`
 ALTER TABLE `taskHistory`
   DROP KEY `startedAt2`,
   ADD KEY `startedAt3` (`startedAt`)
+
+
+--changeset mbell:17 dbms:mysql
+ALTER TABLE `requestHistory`
+  CHANGE COLUMN `user` `f_user` varchar(100) DEFAULT NULL;
+
+ALTER TABLE `deployHistory`
+CHANGE COLUMN `user` `f_user` varchar(100) DEFAULT NULL;
